@@ -1,0 +1,27 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.200.192:5000
+Press CTRL+C to quit
+127.0.0.1 - - [02/Jun/2026 21:24:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:24:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:25:01] "GET /ws HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:25:09] "GET /ws HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:43:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:43:45] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [02/Jun/2026 21:43:56] "GET /ws HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:44:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:44:11] "GET /ws HTTP/1.1" 200 -
+192.168.200.192 - - [02/Jun/2026 21:44:22] "GET / HTTP/1.1" 200 -
+192.168.200.192 - - [02/Jun/2026 21:44:22] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.200.192 - - [02/Jun/2026 21:44:30] "GET /ws HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:44:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:44:52] "GET /ws HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:45:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:45:04] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [02/Jun/2026 21:45:06] "GET /ws HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:47:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:47:43] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [02/Jun/2026 21:48:09] "GET /ws HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:49:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [02/Jun/2026 21:49:08] "GET /ws HTTP/1.1" 200 -

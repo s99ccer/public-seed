@@ -1,0 +1,273 @@
+//@version=6
+indicator("Auto Parallel Channel [OpenCode]", overlay=true, max_lines_count=50, max_labels_count=25)
+
+// ========================== Parameters ==========================
+swingLen = input.int(5, "Swing Length (bars)", minval=2, maxval=20)
+lookback = input.int(200, "Lookback (bars)", minval=50, maxval=500)
+touchPct = input.float(0.5, "Touch Tolerance (%)", minval=0.1, maxval=3, step=0.1)
+maxDraw  = input.int(2,  "Max Channels", minval=1, maxval=5)
+clr      = input.color(color.orange, "Channel Color", group="Style")
+
+// ========================== Pivot Storage ==========================
+var int[]   pivIdx  = array.new<int>()
+var float[] pivPrc  = array.new<float>()
+var bool[]  pivIsHi = array.new<bool>()
+
+hi = ta.pivothigh(high, swingLen, swingLen)
+lo = ta.pivotlow(low, swingLen, swingLen)
+
+if not na(hi)
+    array.push(pivIdx, bar_index - swingLen)
+    array.push(pivPrc, hi)
+    array.push(pivIsHi, true)
+if not na(lo)
+    array.push(pivIdx, bar_index - swingLen)
+    array.push(pivPrc, lo)
+    array.push(pivIsHi, false)
+
+while array.size(pivIdx) > 0 and array.get(pivIdx, 0) < bar_index - lookback
+    array.shift(pivIdx)
+    array.shift(pivPrc)
+    array.shift(pivIsHi)
+
+// ========================== Drawing ID Storage ==========================
+var line[]  ourLines  = array.new_line()
+var fill[]  ourFills  = array.new_fill()
+var label[] ourLabels = array.new_label()
+
+for i = 0 to array.size(ourLines) - 1
+    line.delete(array.get(ourLines, i))
+for i = 0 to array.size(ourFills) - 1
+    fill.delete(array.get(ourFills, i))
+for i = 0 to array.size(ourLabels) - 1
+    label.delete(array.get(ourLabels, i))
+array.clear(ourLines)
+array.clear(ourFills)
+array.clear(ourLabels)
+
+nPiv = array.size(pivIdx)
+if nPiv < 6
+    return
+
+// ========================== Split Pivots ==========================
+var int[]   hiIdx = array.new<int>()
+var float[] hiPrc = array.new<float>()
+var int[]   loIdx = array.new<int>()
+var float[] loPrc = array.new<float>()
+
+array.clear(hiIdx)
+array.clear(hiPrc)
+array.clear(loIdx)
+array.clear(loPrc)
+
+for i = 0 to nPiv - 1
+    if array.get(pivIsHi, i)
+        array.push(hiIdx, array.get(pivIdx, i))
+        array.push(hiPrc, array.get(pivPrc, i))
+    else
+        array.push(loIdx, array.get(pivIdx, i))
+        array.push(loPrc, array.get(pivPrc, i))
+
+nHi = array.size(hiIdx)
+nLo = array.size(loIdx)
+
+// ========================== Channel Arrays ==========================
+var float[] chScore = array.new<float>()
+var float[] chSlope = array.new<float>()
+var float[] chBLow  = array.new<float>()
+var float[] chBHigh = array.new<float>()
+var int[]   chX1    = array.new<int>()
+var float[] chY1    = array.new<float>()
+var int[]   chX3    = array.new<int>()
+var float[] chY3    = array.new<float>()
+var float[] chDir   = array.new<float>()
+
+array.clear(chScore)
+array.clear(chSlope)
+array.clear(chBLow)
+array.clear(chBHigh)
+array.clear(chX1)
+array.clear(chY1)
+array.clear(chX3)
+array.clear(chY3)
+array.clear(chDir)
+
+tol = touchPct / 100.0
+
+// ========================== Detect Bull Channels ==========================
+for i = 0 to nLo - 3
+    for j = i + 2 to nLo - 1
+        x1 = array.get(loIdx, i)
+        y1 = array.get(loPrc, i)
+        x2 = array.get(loIdx, j)
+        y2 = array.get(loPrc, j)
+        bestH = 0.0
+        bestHi = 0
+        for k = 0 to nHi - 1
+            hx = array.get(hiIdx, k)
+            if hx > x1 and hx < x2
+                hp = array.get(hiPrc, k)
+                if hp > bestH
+                    bestH := hp
+                    bestHi := hx
+        if bestH == 0.0
+            continue
+
+        slope = (y2 - y1) / (x2 - x1)
+        b1 = y1 - slope * x1
+        b2 = bestH - slope * bestHi
+        bLow  = math.min(b1, b2)
+        bHigh = math.max(b1, b2)
+        tLow = 0
+        tHigh = 0
+        inside = 0
+        total = 0
+        for k = 0 to lookback - 1
+            bi = bar_index - k
+            if bi < 0
+                continue
+            yVal = close[k]
+            lLow  = slope * bi + bLow
+            lHigh = slope * bi + bHigh
+            if yVal >= lLow and yVal <= lHigh
+                inside += 1
+            total += 1
+            if math.abs(yVal - lLow) / yVal < tol
+                tLow += 1
+            if math.abs(yVal - lHigh) / yVal < tol
+                tHigh += 1
+        if total > 0 and tLow >= 2 and tHigh >= 2
+            score = inside / total
+            if score > 0.7
+                array.push(chScore, score)
+                array.push(chSlope, slope)
+                array.push(chBLow,  bLow)
+                array.push(chBHigh, bHigh)
+                array.push(chX1, x1)
+                array.push(chY1, y1)
+                array.push(chX3, bestHi)
+                array.push(chY3, bestH)
+                array.push(chDir, 1.0)
+
+// ========================== Detect Bear Channels ==========================
+for i = 0 to nHi - 3
+    for j = i + 2 to nHi - 1
+        x1 = array.get(hiIdx, i)
+        y1 = array.get(hiPrc, i)
+        x2 = array.get(hiIdx, j)
+        y2 = array.get(hiPrc, j)
+        bestL = 999999.0
+        bestLi = 0
+        for k = 0 to nLo - 1
+            lx = array.get(loIdx, k)
+            if lx > x1 and lx < x2
+                lp = array.get(loPrc, k)
+                if lp < bestL
+                    bestL := lp
+                    bestLi := lx
+        if bestL == 999999.0
+            continue
+
+        slope = (y2 - y1) / (x2 - x1)
+        b1 = y1 - slope * x1
+        b2 = bestL - slope * bestLi
+        bLow  = math.min(b1, b2)
+        bHigh = math.max(b1, b2)
+        tLow = 0
+        tHigh = 0
+        inside = 0
+        total = 0
+        for k = 0 to lookback - 1
+            bi = bar_index - k
+            if bi < 0
+                continue
+            yVal = close[k]
+            lLow  = slope * bi + bLow
+            lHigh = slope * bi + bHigh
+            if yVal >= lLow and yVal <= lHigh
+                inside += 1
+            total += 1
+            if math.abs(yVal - lLow) / yVal < tol
+                tLow += 1
+            if math.abs(yVal - lHigh) / yVal < tol
+                tHigh += 1
+        if total > 0 and tLow >= 2 and tHigh >= 2
+            score = inside / total
+            if score > 0.7
+                array.push(chScore, score)
+                array.push(chSlope, slope)
+                array.push(chBLow,  bLow)
+                array.push(chBHigh, bHigh)
+                array.push(chX1, x1)
+                array.push(chY1, y1)
+                array.push(chX3, bestLi)
+                array.push(chY3, bestL)
+                array.push(chDir, -1.0)
+
+// ========================== Sort by Score ==========================
+nc = array.size(chScore)
+if nc > 0
+    for i = 0 to nc - 2
+        for j = 0 to nc - 2 - i
+            if array.get(chScore, j) < array.get(chScore, j + 1)
+                tmp  = array.get(chScore, j)
+                array.set(chScore, j, array.get(chScore, j + 1))
+                array.set(chScore, j + 1, tmp)
+
+                tmp  = array.get(chSlope, j)
+                array.set(chSlope, j, array.get(chSlope, j + 1))
+                array.set(chSlope, j + 1, tmp)
+
+                tmp  = array.get(chBLow, j)
+                array.set(chBLow, j, array.get(chBLow, j + 1))
+                array.set(chBLow, j + 1, tmp)
+
+                tmp  = array.get(chBHigh, j)
+                array.set(chBHigh, j, array.get(chBHigh, j + 1))
+                array.set(chBHigh, j + 1, tmp)
+
+                tmpI = array.get(chX1, j)
+                array.set(chX1, j, array.get(chX1, j + 1))
+                array.set(chX1, j + 1, tmpI)
+
+                tmp  = array.get(chY1, j)
+                array.set(chY1, j, array.get(chY1, j + 1))
+                array.set(chY1, j + 1, tmp)
+
+                tmpI = array.get(chX3, j)
+                array.set(chX3, j, array.get(chX3, j + 1))
+                array.set(chX3, j + 1, tmpI)
+
+                tmp  = array.get(chY3, j)
+                array.set(chY3, j, array.get(chY3, j + 1))
+                array.set(chY3, j + 1, tmp)
+
+                tmp  = array.get(chDir, j)
+                array.set(chDir, j, array.get(chDir, j + 1))
+                array.set(chDir, j + 1, tmp)
+
+// ========================== Draw Top Channels ==========================
+dc = math.min(maxDraw, nc)
+xStart = bar_index - lookback
+xEnd   = bar_index
+
+for c = 0 to dc - 1
+    slope = array.get(chSlope, c)
+    bLow  = array.get(chBLow, c)
+    bHigh = array.get(chBHigh, c)
+    dir   = array.get(chDir, c)
+    score = array.get(chScore, c)
+
+    yLoS = slope * xStart + bLow
+    yHiS = slope * xStart + bHigh
+    yLoE = slope * xEnd   + bLow
+    yHiE = slope * xEnd   + bHigh
+
+    array.push(ourLines, line.new(xStart, yLoS, xEnd, yLoE, color=clr, width=1, style=line.style_solid))
+    array.push(ourLines, line.new(xStart, yHiS, xEnd, yHiE, color=clr, width=1, style=line.style_solid))
+    nL = array.size(ourLines)
+    array.push(ourFills, fill.new(array.get(ourLines, nL - 2), array.get(ourLines, nL - 1), color=color.new(clr, 85)))
+
+    chTxt = (dir > 0 ? "BULL ▲ " : "BEAR ▼ ") + str.tostring(math.round(score * 100, 0)) + "%"
+    array.push(ourLabels, label.new(xEnd, math.max(yLoE, yHiE), text=chTxt, color=clr,
+     textcolor=color.white, style=label.style_label_lower_left, size=size.small))
