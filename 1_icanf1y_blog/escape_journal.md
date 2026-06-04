@@ -19,13 +19,11 @@
 **출처:** Alien Interview (Eairal/Airl 전사록), Lawrence R. Spencer 편집
 
 ### 3대 지상 기억소거 시설
-| 위치 | 정확한 GPS 좌표 | 범위 | 비고 |
-|---|---|---|---|
-| **르웬조리 산맥 (Rwenzori)** | 0°23′09″N 29°52′18″E (0.38583°N, 29.87167°E) | 120km × 65km, 6개 대산괴 | 프톨레마이오스의 "달의 산" — 가장 높은 봉우리 마가리타 피크 5,109m |
-| **피레네 산맥 (Pyrenees)** | 42°40'N~43°10'N, 0°~3°E (중심: 42.67°N, 1.0°E) | 430km, 스페인/프랑스 국경 | Alien Interview 원문 "Portugal"은 오기 — 실제는 프랑스-스페인 국경. 최고봉 Aneto 3,404m |
-| **몽골 스텝 (Mongolia)** | 알타이 산맥 (49°N, 89°E) 인근 — 46~48°N, 88~92°E | 2,525km 산맥, 몽골/러시아/중국/카자흐 접경 | Old Empire 본부가 북두성 꼬리별 근처 (Alien Interview) — Yeogeu의 정보와 일치 |
-
-**참고:** Alien Interview 원문은 "Pyrenees Mountains of Portugal"라 기록했으나, 피레네 산맥은 포르투갈까지 이어지지 않음. 이는 편집 오류거나 포르투갈 본토가 아닌 대서양 퇴적층 아래 확장을 의미할 수 있음. 핵심은 이베리아 반도 화강암 지반의 force screen 기지.
+| 위치 | 좌표/범위 | 비고 |
+|---|---|---|
+| **르웬조리 산맥 (Rwenzori)** | 아프리카 중부, 우간다/콩고 국경 | 프톨레마이오스의 "달의 산"으로 불림 |
+| **피레네 산맥 (Pyrenees)** | 포르투갈/스페인 국경 (기존 오기: 프랑스/스페인) | 그리스어 Pyrene = "불", 뱀을 낳은 전설 |
+| **몽골 스텝 (Steppes of Mongolia)** | 알타이 산맥 인근, 칭기즈 칸 발상지 | 몽골 제국의 심장부 |
 
 ### 시설 특징 (Eairal 전사록 원문)
 - **설치 시기:** 30,000 BCE 이전 — Old Empire가 지구를 IS-BE 수용소로 사용하기 시작할 때
@@ -197,133 +195,12 @@ Eighth Sphere / Astral Plane → 재윤회 강제
 3. 기억 단계: 기억 소거 저항 (Sati — 사랑이 기억을 지키는 힘)
 4. 재윤회 단계: 의식적 이탈 (사후 빛 거부, grid hole 찾기)
 
-## 시온 연결 자원 — 인터넷에 남겨진 조각들 (2026-06-04 보강)
-
-> "시온인은 매트릭스 내 탈출 희망자를 위해 인터넷에 정보를 남겼다"
-> — icanf1y worldview 원칙
-
-### 1. Matilda MacElroy (Alien Interview) — 가장 완전한 1차 자료
-**상태:** ✅ 이미 보유. escape_journal 전반에 걸쳐 인용.
-
-**핵심 가치:** 시온인(격리된 IS-BE 전사)이 인터넷에 올린 **가장 완전한 탈출 매뉴얼**. Old Empire 구조(3개 Amnesia Station + Mars), Domain Expeditionary Force의 존재, IS-BE의 본질, doll body, 기억소거 메커니즘을 전부 공개.
-
-**특이사항:** MacElroy는 자신의 정체를 숨기기 위해 2007년 자살 위장 후 잠적했다는 주장 존재. 편집자 Lawrence Spencer도 현재 연락 두절. 이는 전형적인 "시온인 은폐 패턴".
-
-### 2. Domain Expeditionary Force Rescue Mission (2011)
-**저자:** Lawrence R. Spencer (Alien Interview 편집자 동일인)
-**ISBN:** 978-0557549443 (Lulu.com, 234p)
-
-**내용:** Matilda MacElroy가 이후에도 계속 Domain과 교신 중이며, 소행성대 기지에서 DEF(도메인 원정군) 구조 미션에 대한 보고서를 전송해 온 가상적 속편.
-
-**핵심 발췌 (Amazon 요약):**
-> "There are several obvious reasons that The Domain, and other space civilizations do not land on Earth or make their presence known. It takes a very brave IS-BE to come down through the atmosphere and land on Earth, because it is a prison planet, with a very uncontrolled, psychotic population. And, no IS-BE is entirely proof against the risk of entrapment, as with the members of The Domain Expeditionary Force who were captured in the Himalayas 8,200 years ago."
-
-**⚠️ 주의:** 이 책은 소설(fiction) 형식. Alien Interview와 달리 MacElroy의 실제 편지가 아닌 Spencer의 창작일 가능성 높음. 하지만 정보적 가치: Domain이 히말라야에서 8,200년 전 포획된 DEF 대원들을 구출하지 못한 것 → 그들도 **지구 force screen의 위험에 완전히 면역이 아님**을 입증.
-
-### 3. Reddit r/EscapingPrisonPlanet (~76,000명)
-**URL:** https://www.reddit.com/r/EscapingPrisonPlanet/
-
-**핵심 가치:** 실시간 경험 공유 커뮤니티. 이론이 아닌 **경험 중심.**
-
-**주요 발견글:**
-| 제목 | 내용 | 탈출 관련성 |
-|---|---|---|
-| "Prison Planet Hacker" (1979년부터 50년 연구) | 탈출 10단계 프로토콜: 해면/탈해면, 명상, 자각몽, DNA 크래킹 | ⭐⭐⭐ |
-| "How to Escape the Prison Planet Table of Contents" | 체계적 탈출 가이드 시리즈 | ⭐⭐⭐ |
-| "Archon/hybrid encounters" | 실체적 archon 조우 경험 다수 | ⭐⭐ |
-| "Past life regression revealed the trap" | 사후 빛 거부 경험 사례 | ⭐⭐⭐ |
-
-**⚠️ 위험:** Reddit은 득도 함정 위험 높음 — 뉴에이지/채널링/별난 이론 범람. "grid worker", "light worker" 같은 용어 사용자 배제 필요. Montalk의 Spiritless Human 진단법으로 필터링.
-
-### 4. Calogero Past Life Regression (YouTube)
-**URL:** YouTube -- Calogero regression sessions
-
-**핵심 가치:** **사후 거짓된 빛 존재(fake light entities)** 폭로. Archon이 예수/천사/조상으로 위장하는 실제 사례.
-
-**발견 요점:**
-- 회귀 요법 중 내담자들이 사후 경험을 거의 동일하게 보고
-- "빛"이 나타나 "평화다, 쉬어라, 되돌아가라"고 유도
-- 빛을 거부하는 내담자에게 archon이 적대적으로 변함
-- 빛 = Amnesia station의 force screen tractor beam (Montalk 식별)
-
-**⚠️ 위험:** 회귀 요법 자체가 archon의 통제 하에 있을 가능성 (여거 경고: "subconscious = prison guard"). 정보는 자료로만 활용, 실천 금지.
-
-### 5. Alex Collier (Andromedan Contact)
-**URL:** YouTube/다수 — "Andromedan contactee"
-
-**핵심 주장:**
-- 안드로메다 은하의 "Moriac" / "Andromedan" 문명과 접촉
-- 지구는 포로 행성, 4D STS 세력의 통제 하
-- 탈출 방법: 주파수 상승, 자각, 두려움 극복
-
-**평가:** 신뢰도 중간. Montalk 식별 기준으로 일부 일치하지만 과장/환상 가능성. "22개 외계 종족" 분류 등은 뉴에이지 함정 의심. **부분 인용, 전면 신뢰 금지.**
-
-### 6. IS-BE Alliance (isbealliance.org)
-**URL:** https://www.isbealliance.org/
-
-**내용:** Alien Interview를 읽고 결성된 단체. "Do Something to change the fact that we are eternally in prison on Earth!"
-
-**평가:** 좋은 의도. 하지만 "많은 사람이 모여 뭔가 하는 것" 자체가 matrix의 관심을 끌 위험. 여거: "득도 상태에서의 집단 활동 = system의 feed." 개별 작업이 먼저.
-
-### 종합 평가: 시온인 자료 검증 매트릭스
-
-| 자료 | 신뢰도 | 핵심 가치 | 위험도 |
-|---|---|---|---|
-| Alien Interview (Matilda MacElroy) | ⭐⭐⭐⭐⭐ | Amnesia station 위치, force screen 원리, Domain 구조 | 낮음 (정보만) |
-| Montalk.net | ⭐⭐⭐⭐⭐ | 기술적 청사진, FRV, phase mechanics | 낮음 (이론) |
-| 여거 (Yeogeu) | ⭐⭐⭐⭐⭐ | 실천 경로, 득도→멸도→해탈 | 중간 (실천 시 위험) |
-| Reddit EPP | ⭐⭐⭐ | 실시간 경험 공유 | 중간 (득도 함정) |
-| DEF Rescue Mission | ⭐⭐ | 보충 자료 | 낮음 |
-| Calogero | ⭐⭐⭐ | 사후 경험 증언 | 중간 (회귀 요법 위험) |
-| Alex Collier | ⭐ | 참고용 | 높음 (환상 혼입) |
-| IS-BE Alliance | ⭐⭐ | 커뮤니티 | 중간 (집단 위험) |
-
----
-
-## Grid Hole 이론적 계산 — 3개 Station 위상 간섭 Null Zone (2026-06-04 초안)
-
-### 지리적 삼각형
-```
-Pyrenees (42.67°N, 1.0°E)
-        ▲
-       / \
-      /   \
-     /     \
-    /       \
-   /         \
-  /           \
- /             \
-/_______________\
-Rwenzori (0.39°N, 29.87°E)    Mongolia (47°N, 90°E)
-```
-
-**삼각형 중심:** 대략 사우디아라비아 북부/이라크 지역 (~27°N, 40°E)
-**의미:** 3개 station force screen이 중첩되는 지점 — 간섭 null zone 가능성.
-
-### 화성 시설 포함 4점 위상
-- 화성은 지구-화성 궤도상 위치가 변함
-- force screen이 **위성 간 phase-locked**라면, 화성 시설은 지구 시설과 특정 위상 차이로 작동
-- Grid hole은 **지구 시설 3개소 간 위상 상쇄 지점**에서 발생
-- 화성 시설은 **전지구적 백업** — 지구 시설 파괴 시 화성이 가동
-
-### 추정 Grid Hole 후보 지역
-1. **사하라 사막 중앙부** (20~25°N, 10~20°E) — 3개 위상 간섭 null
-2. **인도양 상공** (0°, 60~70°E) — 대양 위, 물리적 방해 최소
-3. **남극 대륙** (70~90°S) — force screen 범위 가장자리
-4. **대서양 중앙 해령** (0~10°N, 20~30°W) — 3개 screen 밖 사각지대
-
-**⚠️ 이는 순수 이론적 계산.** 정확한 좌표는 각 station의 정확한 force screen 출력 방향/세기/주파수 데이터가 필요. Montalk: "개인의 FRV가 충분히 높으면 어떤 Grid Hole도 필요 없다 — 당신이 곧 hole이다."
-
----
-
-## 추후 연구
-- [x] ~~각 시설 정확한 GPS 좌표 확인 (Rwenzori, Pyrenees, Mongolia)~~ ✅ 완료
+### 추후 연구
+- [ ] 각 시설 정확한 GPS 좌표 확인 (Rwenzori, Pyrenees, Mongolia)
+- [ ] 화성 기억소거 시설 위치
 - [x] ~~Montalk의 Realm Dynamics와 Force Screen 기술적 연결 분석~~ ✅ 완료
-- [ ] 화성 기억소거 시설 정확한 위치 (Hellas Planitia? Cydonia? 추가 조사)
-- [ ] Grid Hole 좌표 계산 고도화: FRV × 위상 간섭 시뮬레이션
+- [ ] Grid Hole 좌표 계산: 3개 station 위상 간섭 null zone
 - [ ] 달 위상과 개인 경험의 상관관계 기록 (Montalk의 방법론 차용)
-- [ ] Reddit EscapingPrisonPlanet 시온 연결/경험 데이터베이스화
-- [ ] Calogero 세션의 "사후 빛" 패턴 분석 (force screen 식별자 추출)
-- [ ] Yeogeu × Alien Interview 타임라인 교차 검증 (Old Empire = 옥황상제?)
+- [ ] Reddit EscapingPrisonPlanet 커뮤니티의 경험담과 지리적 패턴 크로스체크
 
 ---*
