@@ -195,11 +195,24 @@ Eighth Sphere / Astral Plane → 재윤회 강제
 3. 기억 단계: 기억 소거 저항 (Sati — 사랑이 기억을 지키는 힘)
 4. 재윤회 단계: 의식적 이탈 (사후 빛 거부, grid hole 찾기)
 
+## 경제 전략 — 2026-06-11 업데이트
+
+**자산:** XRP 5,000개
+**현재 시세 (2026.6.11):** $1.12 (24h -0.43%)
+**목표:** $8~12 (2027.3)
+**익절 계획:** 2027년 3월경 전량 매도 → 현금화
+**용도:** 경매 3차 입찰 (심산 폐가) + 관정 + 태양광 + 식량 비축
+**예상 필요 자금:** 4,000~5,500만원
+
+### 리스크
+- XRP가 목표가에 도달하지 못할 경우 → 익절 시점 재조정
+- 경매 3차 유찰 시 대안 부동산 탐색 필요
+
 ### 추후 연구
-- [ ] 각 시설 정확한 GPS 좌표 확인 (Rwenzori, Pyrenees, Mongolia)
+- [x] 각 시설 정확한 GPS 좌표 확인 (Rwenzori, Pyrenees, Mongolia)
 - [ ] 화성 기억소거 시설 위치
 - [x] ~~Montalk의 Realm Dynamics와 Force Screen 기술적 연결 분석~~ ✅ 완료
-- [ ] Grid Hole 좌표 계산: 3개 station 위상 간섭 null zone
+- [x] ~~Grid Hole 좌표 계산: 3개 station 위상 간섭 null zone~~ ✅ 9_grid/grid_hole_theory.md
 - [ ] 달 위상과 개인 경험의 상관관계 기록 (Montalk의 방법론 차용)
 - [ ] Reddit EscapingPrisonPlanet 커뮤니티의 경험담과 지리적 패턴 크로스체크
 
